@@ -31,9 +31,9 @@ export default function Home() {
     });
     if (data.ok) {
       const res = await data.json();
-      const user = res.user;
-      localStorage.setItem("userSession", JSON.stringify(user));
-      router.push("/");
+      localStorage.setItem("userSession", JSON.stringify(res));
+      alert("Account created successfully!");
+      router.push("/login");
     } else {
       const errorMessage = await data.text();
       const error = JSON.parse(errorMessage);
@@ -145,6 +145,11 @@ export default function Home() {
             >
               Already have an account?
             </button>
+          </div>
+
+          <div className="">
+            <span className="font-bold">Test User: </span>admin@gmail.com
+            admin@123
           </div>
         </>
       )}

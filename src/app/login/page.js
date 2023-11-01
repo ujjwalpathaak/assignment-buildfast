@@ -25,6 +25,7 @@ const page = () => {
       const user = res.user;
       localStorage.setItem("userSession", JSON.stringify(user));
       router.push("/");
+      ``;
     } else {
       const errorMessage = await data.text();
       const error = JSON.parse(errorMessage);
@@ -115,6 +116,9 @@ const page = () => {
         >
           Don't have an account?
         </button>
+      </div>
+      <div className="">
+        <span className="font-bold">Test User: </span>admin@gmail.com admin@123
       </div>
     </main>
   );
